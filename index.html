@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Search test</title>
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/style.css">
+	<script src="lib/angular.min.js"></script>
+	<script src="js/main.js"></script>
+</head>
+<body ng-app="search">
+	<header>
+		<div class="wrapper">
+			<div class="logo">
+				<img src="img/logo.png" alt="" class="logo">
+			</div>
+		</div>
+	</header>
+	<div class="wrapper main" ng-controller="searchController">
+		<div class="input-wrapper">
+			<input type="text" class="search-input" ng-model="input">
+			<button class="btn search-btn" ng-click="ajaxReq()">Search</button>
+		</div>
+		<div class="result-wrapper" ng-repeat="res in result">
+			<div class="result-block">
+				<h2 class="h2">Player name: <b>{{res.name}}</b></h2>
+				<a href="#" class="result-link link">Player id: <b>{{res.id}}</b></a>
+				<div class="result-text">
+					<p>Player date of birth: <b>{{res.dateOfBirth}}</b></p>
+					<p>Player number: <b>{{res.jerseyNumber}}</b></p>
+					<p>Player cost: <b>{{res.marketValue}}</b></p>
+					<p>Player nationality: <b>{{res.nationality}}</b></p>
+					<p>Player position: <b>{{res.position}}</b></p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer>
+		<nav class="footer-menu">
+			<a href="#" class="link">Help</a>
+			<a href="#" class="link">Our team</a>
+			<a href="#" class="link">Contact Us</a>
+		</nav>
+	</footer>
+</body>
+</html>
